@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/on-the-road/static/css/main.f8c52afb.css",
-    "main.js": "/on-the-road/static/js/main.2245a098.js",
+    "main.js": "/on-the-road/static/js/main.9b296db5.js",
     "static/media/Singapore.jpg": "/on-the-road/static/media/Singapore.7759b6dfbe2a76ecbcfa.jpg",
     "static/media/smalltown.jpg": "/on-the-road/static/media/smalltown.52a4eaa6b72a4cbe567d.jpg",
     "static/media/nature.jpg": "/on-the-road/static/media/nature.07f930e77eb60abf7cf5.jpg",
@@ -70,10 +70,10 @@
     "static/media/revicons.woff": "/on-the-road/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/on-the-road/index.html",
     "main.f8c52afb.css.map": "/on-the-road/static/css/main.f8c52afb.css.map",
-    "main.2245a098.js.map": "/on-the-road/static/js/main.2245a098.js.map"
+    "main.9b296db5.js.map": "/on-the-road/static/js/main.9b296db5.js.map"
   },
   "entrypoints": [
     "static/css/main.f8c52afb.css",
-    "static/js/main.2245a098.js"
+    "static/js/main.9b296db5.js"
   ]
 }
