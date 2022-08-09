@@ -1,5 +1,6 @@
 import React from 'react';
 import './NatureActivity.scss';
+import { IoAddCircleOutline,IoChevronBack,IoChevronDown,IoChevronForward, IoChevronUp} from 'react-icons/io5';
 
 class NatureActivity extends React.Component{
     state={
@@ -23,7 +24,6 @@ class NatureActivity extends React.Component{
             <div className="natureActivity2" onMouseLeave={this.startPosition} >
                 <div className="naturePlace naturePlace0" onMouseEnter={this.finalPosition}>
                     <h6>{this.props.name}</h6>
-                    <ion-icon name="add-circle-outline" size="large" ></ion-icon>
                 </div>
                 <div className="naturePlace" style={{transform:`translateX(${this.state.transform[0]}) scale(${this.state.scale})`,opacity:this.state.opacity*this.props.show[0]}} onClick={()=>{this.props.onclick(this.props.searchDescription[0],this.props.searchCity[0])}} >
                     <img src={this.props.images[0]} alt={this.props.places[0]}></img>
@@ -42,16 +42,16 @@ class NatureActivity extends React.Component{
                     <div>{this.props.places[3]}</div>
                 </div>
                 <div className="naturePlace natureArrow" style={{transform:`translateX(${this.state.transform[4]})`,opacity:this.state.opacity*this.props.show[0]}} >
-                    <ion-icon name="chevron-back-outline"></ion-icon>
+                    <IoChevronBack />
                 </div>
                 <div className="naturePlace natureArrow" style={{transform:`translateY(${this.state.transform[5]})`,opacity:this.state.opacity*this.props.show[1]}} >
-                    <ion-icon name="chevron-up-outline"></ion-icon>
+                    <IoChevronUp />
                 </div>
                 <div className="naturePlace natureArrow" style={{transform:`translateX(${this.state.transform[6]})`,opacity:this.state.opacity*this.props.show[2]}}>
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                    <IoChevronForward />
                 </div>
                 <div className="naturePlace natureArrow" style={{transform:`translateY(${this.state.transform[7]})`,opacity:this.state.opacity*this.props.show[3]}}>
-                    <ion-icon name="chevron-down-outline"></ion-icon>
+                    <IoChevronDown />
                 </div>
             </div>    
         )
