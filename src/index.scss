@@ -1,0 +1,490 @@
+$font-basic:'Lato','Helvetica Neue','Arial','Open-Sans',sans-serif;
+$font-vary:'Cardo',serif;
+
+$blackColor:#333;
+$whiteColor:rgb(247, 247, 247);
+$backColor:rgb(244, 244, 244);
+
+$sectionDistance:100px;
+
+$navBarHeight: 90px;
+
+$sidePaddingXSmall: 1rem;
+$sidePaddingSmall: 3rem;
+
+$Z-Index-SideBar:930;
+$Z-Index-Backdrop:920;
+$Z-Index-HeaderNavbar:900;
+$Z-Index-HeaderNavbar-Logo:910;
+
+$Z-Index-Modal:930;
+
+$Z-Index-naturePlace0:100;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: all 0.5s;
+}
+
+.App {
+  min-width: 360px;
+  overflow: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.hide {
+  display: none;
+}
+
+.otr-modal{
+  position:fixed;
+  z-index:$Z-Index-Modal;
+  width:80%;
+  min-width: 256px;
+  left:10%;
+  top:10%;
+  background-color: white;
+  transition: all 0.3s ease-out;
+  padding:1rem;
+  overflow: auto;
+  max-height:80%;
+  box-shadow:1px 1px 1px rgb(105, 104, 104);
+}
+
+.Backdrop{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: $Z-Index-Backdrop;
+  left:0;
+  top:0;
+};
+
+header {
+  color: #535353;
+  height: auto;
+  width: 100%;
+  .navLogo{
+    position: fixed;
+    z-index:$Z-Index-HeaderNavbar-Logo;
+    width:240px;
+    top:35px;
+    left:10px;
+    img{
+      width: 100%;
+    }
+  }
+  nav {
+    width: 100vw;
+    padding-top: 40px;
+    font-size: 20px;
+    background-color: white;
+    z-index: $Z-Index-HeaderNavbar;
+    border-bottom: 1px solid #D2D2D2;
+    ul {
+      margin: 0;
+      align-items: center;
+    }
+    li {
+      list-style-type: none;
+    }
+  }
+  .navBarL {
+    height: $navBarHeight;
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin: 0;
+    .navBarLCon {
+      position: relative;
+    }
+    ul {
+      position: absolute;
+      right:0;
+      display: flex;
+    }
+    li {
+      margin-left: 25px;
+    }
+  }
+  .navBarS {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    font-size: 20px;
+    margin: 0;
+    .navBarSConN{
+      right:0;
+      width: 100%;
+      padding-bottom: 14px;
+    }
+    .navMenuIcon {
+      display: flex;
+      justify-content:flex-end;
+    }
+    li { 
+      margin-top: 1rem;
+    }
+  }
+}
+
+// MainPage
+.MainPage{
+  margin-top: $navBarHeight;
+  height:42vw;
+  display:flex;
+  flex-direction: row;
+};
+
+.bigcities,
+.smalltowns,
+.nature{
+  flex:1;
+  position:relative;
+  overflow: hidden;
+  transition: all 0.5s;
+  .MainPage-Text{
+    position:absolute;
+    bottom:0;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    h4{
+      font-size: 1.5rem;
+      margin-bottom:15px;
+      color:$blackColor;
+      text-shadow: 2px 2px  5px #ffffff;
+      transition: all 0.5s;
+    };        
+    };
+  .MainPage-Image{
+    position:absolute;
+    top:0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  };
+  .MainPage-Sunlight{
+    position:absolute;
+    top:0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+  };
+  img{
+    display:block;
+    width: auto;
+    height: 100%;
+    filter:brightness(100%) contrast(100%);
+    transition: all 0.5s;
+  };
+  &:hover{
+    cursor: pointer;
+    flex:1.5;
+    .MainPage-Text {
+      h4{
+        font-size: 1.8rem;
+      };      
+    }
+    .MainPage-Sunlight{
+      opacity: 0.9;
+    }
+    img{
+      filter:brightness(110%) contrast(105%);
+    }
+  };
+};
+
+//MainDescription
+.MainDescription{
+  text-align: center;
+  padding:$sectionDistance $sidePaddingXSmall;
+  background-color:$backColor;
+  p{
+      margin:1.5rem auto;
+  }
+  span{
+      display:inline;
+      text-transform: uppercase;
+      font-family:'Cardo',serif;
+      font-weight: 600;
+  }
+  .mainP{
+      font-size:1.1rem;
+  }
+  .secondary{
+      color:#999;
+  };
+}
+
+//BigCities
+.BigCities {
+  padding-top: $sectionDistance ;
+  text-align:center;
+}
+
+.BigCities-image{
+  position: relative;
+  height:25vw;
+  min-height: 160px;
+  background-color: black;
+  
+  .BigCities-city{
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      transition: opacity 0.5s;
+  };
+  .BigCities-link{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top:0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .BigCities-text{
+          text-decoration: none;
+          color:white;
+          font-size: 120%;
+          border-bottom: 1px solid transparent;
+          opacity: 0;
+          transition: opacity 0.5s,border-bottom 0.5s;
+          &:hover{
+              border-bottom: 1px solid white;
+              cursor: pointer;
+          }
+      };
+      
+  };
+  &:hover{
+      .BigCities-city{
+          opacity: 0.6;
+      };
+      .BigCities-text{
+          opacity:1;
+      }
+  }
+};
+
+//BigCitiesTextes 
+
+.BigCitiesText{
+  font-family: $font-vary;
+  background-color: $backColor;
+}
+
+.BigCitiesTextChild{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding:50px 20px;
+}
+
+.BigCitiesTextChild-Top{
+  .BigCitiesTextChild-title{
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      border-bottom: 1px solid transparent;
+      transition:border-bottom 0.5s;
+      &:hover{
+          cursor: pointer;
+          border-bottom: 1px solid black;
+      }
+  };
+  p{
+      overflow: auto;
+      text-align: justify;
+      line-height: 145%;
+      padding-top:20px;
+      height: 280px;
+      &:before{
+          content:"\201C";
+          font-size: 300%;
+      };
+  };
+}
+
+
+.bookInfowrap{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top:1rem;
+  img{
+      width:80px;
+      height:80px;
+      object-fit: cover;
+      border-radius: 50%;
+  };
+  .bookInfotext {
+      h5{
+          font-size: 100%;
+      }
+      a{
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-start;
+          color:$blackColor;
+          text-decoration: none;
+          h5{
+              padding-left:.5rem;
+          }
+      }
+  }
+};
+
+//SmallTowns 
+
+.SmallTowns {
+  padding-top: $sectionDistance ;
+}
+
+.SmallTowns-building{
+  position: relative;
+  cursor: pointer;
+  .SmallTowns-street {
+    img{
+      width: 100%;
+    }
+  }
+  h5{ 
+      top:46%;
+      position:absolute;
+      text-align: center;
+      width: 100%;
+      font-size: 1.3rem;
+      font-weight: 800;
+      text-shadow: 1px 1px 1px rgb(116, 115, 115);
+  }
+  .SmallTowns-imageFrame{
+      position:absolute;
+      top:54.5%;
+      height: 30.5%;
+      width: 75%;
+      left:12.5%;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img{
+        height: 92%;
+        width: 94%;
+      }
+  }
+  
+}
+
+.SmallTownText{
+  background-color: $backColor;
+  font-family: $font-vary;
+  padding:20px 50px;
+}
+
+//Nature (only text park)
+.NatureText{
+  background-color: $backColor;
+  font-family: $font-vary;
+  padding:20px 50px;
+}
+
+footer {
+  height: 120px;
+  background-color: $blackColor;
+  color:$whiteColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+//////////////////////////////////////////////////
+
+@media screen and (max-width: 992px) { //mid screen
+  header {
+    .navBarL {
+      display: none;
+    }
+    .navBarS {
+      display: block;
+    }   
+  }
+
+  .MainPage {
+    flex-direction: column; 
+    height: 210vw;
+    min-height: 672px; 
+  }
+
+  .bigcities,
+  .smalltowns,
+  .nature{
+    &:hover{
+      flex:1;
+    };
+  };
+  .BigCities-image{
+    height:50vw;
+  }
+
+  .BigCitiesTextChild-Top{
+    p{
+        height: 150px;
+    };
+  }
+}
+
+@media screen and (max-width: 768px) { //small screen
+  .bigcities,
+  .smalltowns,
+  .nature{
+    .MainPage-Text{
+      h4{
+        font-size: 1.2rem;
+      };
+    };
+    &:hover{
+      .MainPage-Text {
+        h4{
+          font-size: 1.5rem;
+        };      
+      }
+    };
+  };
+  .BigCitiesTextChild-Top{
+    p{
+        height: 220px;
+    };
+  }
+
+  .SmallTowns-building{
+    h5{ 
+        font-size: 1rem;
+    }
+  }
+};
+
